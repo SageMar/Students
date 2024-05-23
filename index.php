@@ -34,9 +34,16 @@ $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 <ol>
     <?php
     foreach($result as $row) {
-        echo "<li>" . $row['last'] . ", " $row['first'] . "</li>";
+        echo "<li>" . $row['last'] . ", " .  $row['first'] . "</li>";
     }
-?>
+    $path = $_SERVER['DOCUMENT_ROOT'].'/form.php';
+    $sql = "INSERT INTO student (last, first) VALUES (:last, :first)";
+
+    $statement = $dbh->prepare($sql);
+    $last = ""
+    $first = ""
+
+    ?>
 </ol>
 
 </body>
