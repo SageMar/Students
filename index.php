@@ -31,6 +31,7 @@ $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
 <h1>Student List</h1>
+<a href = "form.php">Add new student here</a>
 <ol>
     <?php
     foreach($result as $row) {
