@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <form method = "post">
 
         <label for="sid"> ID:</label>
-        <input type="text" sid="id" name="sid" required>
+        <input type="text" id="sid" name="sid" required>
         <br>
 
 
