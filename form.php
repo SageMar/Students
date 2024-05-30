@@ -12,18 +12,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die($e->getMessage());
     }
 
-    $sql = "INSERT INTO student (last, first, GPA, SID, advisor, birthdate) 
-        VALUES (:last, :first, :GPA, :SID, :Advisor, :birthdate)";
+    $sql = "INSERT INTO student (last, first, gpa, sid, advisor, birthdate) 
+        VALUES (:last, :first, :gpa, :sid, :advisor, :birthdate)";
 
     $statement = $dbh->prepare($sql);
     $statement->bindParam(':last', $last);
     $statement->bindParam(':first', $first);
 
-    $statement->bindParam(':SID', $SID);
-    $statement->bindParam(':Birthdate', $Birthdate);
+    $statement->bindParam(':sid', $sid);
+    $statement->bindParam(':birthdate', $birthdate);
 
-    $statement->bindParam(':GPA', $GPA);
-    $statement->bindParam(':Advisor', $Advisor);
+    $statement->bindParam(':gpa', $gpa);
+    $statement->bindParam(':advisor', $advisor);
 
 }
 
@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <br>
 
         <label for="birthdate">Birthdate:</label>
-        <input type="date" id="birthdate" name="birthdate" required>
+        <input type="date" id="birthday" name="birthdate" required>
         <br>
 
         <label for="gpa">GPA:</label>
