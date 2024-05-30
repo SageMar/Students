@@ -34,9 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $statement->bindParam(':gpa', $gpa);
     $statement->bindParam(':advisor', $advisor);
-    if ($statement->execute()) {
-        $inserted = true;
-    }
+    $statement->execute();
 
 
 }
@@ -77,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="text" id="gpa" name="gpa" required>
         <br>
 
-        <label for="advisor">Advisor:</label>
+        <label for="advisor">Advisor Number:</label>
         <input type="text" id="advisor" name="advisor" required>
         <br>
 
