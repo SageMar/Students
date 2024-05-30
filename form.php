@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 
 <h1>New students</h1>
-    <form method = "post">
+    <form action = "form.php" method = "post">
 
         <label for="sid"> ID:</label>
         <input type="text" id="sid" name="sid" required>
