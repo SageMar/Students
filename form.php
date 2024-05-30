@@ -50,6 +50,14 @@ $statement->bindParam(':Advisor', $Advisor);
 
 <label for="first">First Name:</label>
 <input type="text" id="first" name="first" required>
+
+<label for="birthdate">Birthdate:</label>
+<input type="date" id="birthdate" name="birthdate" required>
+
+<input type="text" id="gpa" name="gpa" required>
+
+<label for="advisor">Advisor:</label>
+<input type="text" id="advisor" name="advisor" required>
 <br>
 
 </form>
