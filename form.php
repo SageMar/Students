@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $path = $_SERVER['DOCUMENT_ROOT'] . '/../config.php';
     require_once $path;
@@ -11,6 +14,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // terminate if it can't connect to database
         die($e->getMessage());
     }
+
+    $last = $_POST['last'];
+    $first = $_POST['first'];
+    $sid = $_POST['sid'];
+    $birthdate = $_POST['birthdate'];
+    $gpa = $_POST['gpa'];
+    $advisor = $_POST['advisor'];
 
     $sql = "INSERT INTO student (last, first, gpa, sid, advisor, birthdate) 
         VALUES (:last, :first, :gpa, :sid, :advisor, :birthdate)";
