@@ -34,6 +34,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $statement->bindParam(':gpa', $gpa);
     $statement->bindParam(':advisor', $advisor);
+    if ($statement->execute()) {
+        $inserted = true;
+    }
+
 
 }
 
