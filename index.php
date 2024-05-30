@@ -15,7 +15,7 @@ try {
     die($e->getMessage());
 }
 
-$sql = "SELECT * FROM students";
+$sql = "SELECT * FROM student";
 $statement = $dbh->prepare($sql);
 $statement->execute();
 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -37,13 +37,6 @@ $result = $statement->fetchAll(PDO::FETCH_ASSOC);
     foreach($result as $row) {
         echo "<li>" . $row['last'] . ", " .  $row['first'] . "</li>";
     }
-    $path = $_SERVER['DOCUMENT_ROOT'].'/form.php';
-    $sql = "INSERT INTO student (last, first) VALUES (:last, :first)";
-
-    $statement = $dbh->prepare($sql);
-    $last = ""
-    $first = ""
-
     ?>
 </ol>
 

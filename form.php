@@ -1,4 +1,28 @@
 <?php
+$path = $_SERVER['DOCUMENT_ROOT'].'/../config.php';
+require_once $path;
+
+try {
+    // instantiate the PDO database Object
+    $dbh = new PDO(DB_DSN, DB_USERNAME, DB_PASSWORD);
+    echo 'connect';
+} catch (PDOException $e){
+    // terminate if it can't connect to database
+    die($e->getMessage());
+}
+
+$sql = "INSERT INTO student (last, first) VALUES (:last, :first)";
+
+$statement = $dbh->prepare($sql);
+$statement->bindParam(':last', $last);
+$statement->bindParam(':first', $first);
+
+$statement->bindParam(':SID', $SID);
+$statement->bindParam(':Birthdate', $Birthdate);
+
+$statement->bindParam(':GPA', $GPA);
+$statement->bindParam(':Advisor', $Advisor);
+
 
 
 
@@ -15,6 +39,7 @@
 <body>
 
 <h1> New students</h1>
+<form>
 
 <label for="sid"> ID:</label>
 <input type="text" sid="id" name="sid" required>
@@ -30,6 +55,6 @@
 </form>
 
 </body>
-</html>>
+</html>
 
 
